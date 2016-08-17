@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar danger>
+    <ion-title>Welcome To MyApp</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="slide">
+
+  <ion-slides pager>
+    <ion-slide *ngFor="let slide of slides">
+      <ion-toolbar>
+        <ion-buttons end>
+          <button (click)="GoTo()">Skip</button>
+        </ion-buttons>
+      </ion-toolbar>
+      <img [src]="slide.image" class="slide-image"/>
+      <h2 class="slide-title" [innerHTML]="slide.title"></h2>
+      <p [innerHTML]="slide.description"></p>
+    </ion-slide>
+    <ion-slide>
+      <ion-toolbar>
+      </ion-toolbar>
+      <img src="build/images/ica-slidebox-img-4.png" class="slide-image"/>
+      <h2 class="slide-title">Ready to Play?</h2>
+      <button large clear (click)="GoTo()">
+        Continue
+        <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
